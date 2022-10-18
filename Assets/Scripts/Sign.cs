@@ -18,10 +18,13 @@ public class Sign : MoveLeft
         float dst = transform.position.x - Pengendara.Instance.transform.position.x;
         if(dst < -0.5){
             if(!answered){
+                //quiz kelewat
                 SignSpawner.Instance.signList.RemoveAt(0);
                 if(SignSpawner.Instance.signList.Count >= 1){
                     SignSpawner.Instance.signList.ElementAt(0).SignQuiz();
                 }
+
+                Pengendara.Instance.nyawaBerkurang();
             }
             //generate another quiz
             
