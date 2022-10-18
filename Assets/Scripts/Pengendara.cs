@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.PlayerLoop;
 using System;
 
+
 public class Pengendara : MonoBehaviour
 {
     #region singleton
@@ -21,13 +22,14 @@ public class Pengendara : MonoBehaviour
     [SerializeField] private bool isDead;
     [SerializeField] private int nyawa;
     [SerializeField] private float jarakTempuh;
+    [SerializeField] private GameObject[] HealthUI;
 
     [SerializeField] Text jarakUI;
 
     public int kecepatan;
 
     private void Start() {
-        nyawa = 5;
+        nyawa = 3;
         isDead = false;
         jarakTempuh = 0;
         kecepatan = 7;
@@ -58,6 +60,7 @@ public class Pengendara : MonoBehaviour
     }
 
     public void nyawaBerkurang(){
+        HealthUI[nyawa -1].SetActive(false);
         nyawa--;
         if(nyawa <= 0){
             Dead();
