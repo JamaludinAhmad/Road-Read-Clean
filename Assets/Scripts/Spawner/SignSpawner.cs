@@ -47,8 +47,10 @@ public class SignSpawner : MonoBehaviour
             signList.Add(newSign);
             if(signList.Count == 1){
                 signList.ElementAt(0).SignQuiz();
+                signList.ElementAt(0).arrow.SetActive(true);
             }
             newSign.transform.position = this.transform.position;
+            newSign.arrow.transform.position = (Vector2)newSign.transform.position + (Vector2.up * 2);
             newSign.gameObject.SetActive(true);
             yield return new WaitForSeconds(0.8f);
         }

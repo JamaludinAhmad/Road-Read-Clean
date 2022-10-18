@@ -70,11 +70,13 @@ public class QuizManager : MonoBehaviour
     }
     public void buttonClick(int idx){
         SignSpawner.Instance.signList.ElementAt(0).answered = true;
+        SignSpawner.Instance.signList.ElementAt(0).arrow.SetActive(false);
         SignSpawner.Instance.signList.RemoveAt(0);
         if(idxanswer[idx] == true){
             Debug.Log("Jawaban anda benar");
             if(SignSpawner.Instance.signList.Count >= 1){
                 SignSpawner.Instance.signList.ElementAt(0).SignQuiz();
+                SignSpawner.Instance.signList.ElementAt(0).arrow.SetActive(true);
             }
 
         }
@@ -83,6 +85,7 @@ public class QuizManager : MonoBehaviour
             Debug.Log("Jawaban anda salah");
             if(SignSpawner.Instance.signList.Count >= 1){
                 SignSpawner.Instance.signList.ElementAt(0).SignQuiz();
+                SignSpawner.Instance.signList.ElementAt(0).arrow.SetActive(true);
                 Pengendara.Instance.nyawaBerkurang();
             }
         }

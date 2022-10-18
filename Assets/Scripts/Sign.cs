@@ -9,6 +9,9 @@ public class Sign : MoveLeft
     [SerializeField] private int answer;
     public bool answered;
 
+    public GameObject arrow;
+
+
     private void Start() {
         answered = false;
     }
@@ -22,12 +25,15 @@ public class Sign : MoveLeft
                 SignSpawner.Instance.signList.RemoveAt(0);
                 if(SignSpawner.Instance.signList.Count >= 1){
                     SignSpawner.Instance.signList.ElementAt(0).SignQuiz();
+                    arrow.SetActive(false);
                 }
 
                 Pengendara.Instance.nyawaBerkurang();
             }
             //generate another quiz
-            
+        }
+
+        if(transform.position.x - Camera.main.transform.position.x < -10){
             Destroy(gameObject);
         }
     }
