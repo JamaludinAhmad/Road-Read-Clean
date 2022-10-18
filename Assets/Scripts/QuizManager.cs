@@ -83,6 +83,7 @@ public class QuizManager : MonoBehaviour
             Debug.Log("Jawaban anda salah");
             if(SignSpawner.Instance.signList.Count >= 1){
                 SignSpawner.Instance.signList.ElementAt(0).SignQuiz();
+                Pengendara.Instance.nyawaBerkurang();
             }
         }
     }

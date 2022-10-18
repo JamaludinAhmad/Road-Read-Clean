@@ -24,6 +24,7 @@ public class Sign : MoveLeft
                 }
             }
             //generate another quiz
+            
             Destroy(gameObject);
         }
     }

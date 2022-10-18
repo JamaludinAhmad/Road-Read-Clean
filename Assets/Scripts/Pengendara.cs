@@ -23,6 +23,7 @@ public class Pengendara : MonoBehaviour
     [SerializeField] private float jarakTempuh;
 
     [SerializeField] Text jarakUI;
+    private float startpos;
 
     public int kecepatan;
 
@@ -31,6 +32,7 @@ public class Pengendara : MonoBehaviour
         isDead = false;
         jarakTempuh = 0;
         kecepatan = 7;
+        startpos = this.transform.position.x;
     }
 
     private void FixedUpdate() {
@@ -42,7 +44,7 @@ public class Pengendara : MonoBehaviour
             Dead();
         }
 
-        if(transform.position.x < -6.85){
+        if(transform.position.x < startpos){
             kecepatan = 7;
         }
     }
