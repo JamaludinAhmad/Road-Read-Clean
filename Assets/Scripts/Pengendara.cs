@@ -62,6 +62,7 @@ public class Pengendara : MonoBehaviour
     }
 
     public void nyawaBerkurang(){
+        Debug.Log("nyawa berkurang");
         HealthUI[nyawa -1].SetActive(false);
         nyawa--;
         if(nyawa <= 0){
@@ -72,6 +73,7 @@ public class Pengendara : MonoBehaviour
     void Dead(){
         isDead = true;
         nyawa = 0;
+        Time.timeScale = 0;
         //lakukan munculkan UI
         
     }

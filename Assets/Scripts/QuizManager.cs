@@ -37,7 +37,6 @@ public class QuizManager : MonoBehaviour
     public void GenerateQuiz(int jawabanbenar){
         jawaban = SignSpawner.Instance.getJawaban();
         int rand = UnityEngine.Random.Range(0,2);
-        Debug.Log("Quiz: " + rand);
         //jika rand satu maka jawaban benar ada di button kanan
         if(rand == 1){
             idxanswer[1] = true;
@@ -86,8 +85,9 @@ public class QuizManager : MonoBehaviour
             if(SignSpawner.Instance.signList.Count >= 1){
                 SignSpawner.Instance.signList.ElementAt(0).SignQuiz();
                 SignSpawner.Instance.signList.ElementAt(0).arrow.SetActive(true);
-                Pengendara.Instance.nyawaBerkurang();
             }
+            
+            Pengendara.Instance.nyawaBerkurang();
         }
     }
 

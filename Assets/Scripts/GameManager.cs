@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     private void Update() {
         cooldown += Time.deltaTime;
 
+        if(Pengendara.Instance.IsDead()){
+            return;
+        }
         //buat sistem level pada spawn
         //0 - 100 meter 1 spawn dan kecepatan 8
         //0 - 250 meter 2 spawn dan kecepatan 9
@@ -34,12 +37,14 @@ public class GameManager : MonoBehaviour
         }
 
         if(Pengendara.Instance.GetJarakTempuh() > 350 && cooldown > 3f){
-            SignSpawner.Instance.SpawnSign(3);
+            int rand = UnityEngine.Random.Range(1, 4);
+            SignSpawner.Instance.SpawnSign(rand);
             cooldown = 0;
         }
 
         else if(Pengendara.Instance.GetJarakTempuh() > 150 && cooldown > 3f){
-            SignSpawner.Instance.SpawnSign(2);
+            int rand = UnityEngine.Random.Range(1, 3);
+            SignSpawner.Instance.SpawnSign(rand);
             cooldown = 0;
         }
         

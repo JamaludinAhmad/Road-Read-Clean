@@ -20,17 +20,17 @@ public class Sign : MoveLeft
         base.Move();
         float dst = transform.position.x - Pengendara.Instance.transform.position.x;
         if(dst < -0.5){
+            //belum di answer
             if(!answered){
                 //quiz kelewat
+                arrow.SetActive(false);
                 SignSpawner.Instance.signList.RemoveAt(0);
                 if(SignSpawner.Instance.signList.Count >= 1){
                     SignSpawner.Instance.signList.ElementAt(0).SignQuiz();
-                    arrow.SetActive(false);
                 }
-
+                Debug.Log("tes");
                 Pengendara.Instance.nyawaBerkurang();
             }
-            //generate another quiz
         }
 
         if(transform.position.x - Camera.main.transform.position.x < -10){
@@ -49,7 +49,5 @@ public class Sign : MoveLeft
     public void SignQuiz(){
         QuizManager.Instance.GenerateQuiz(answer);
     }
-
-
 
 }
