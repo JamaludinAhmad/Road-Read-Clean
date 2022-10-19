@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    bool isStarted;
     [SerializeField] float cooldown, cooldownSpeed;
     
     // Start is called before the first frame update
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
         }
         cooldownSpeed = 0;
         cooldown = 0;
+        isStarted = false;
     }
 
 
@@ -23,6 +25,11 @@ public class GameManager : MonoBehaviour
 
         if(Pengendara.Instance.IsDead()){
             return;
+        }
+
+        if(isStarted){
+
+            
         }
         //buat sistem level pada spawn
         //0 - 100 meter 1 spawn dan kecepatan 8
