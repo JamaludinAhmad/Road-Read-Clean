@@ -26,7 +26,6 @@ public class SignSpawner : MonoBehaviour
 
     private void Start() {
         batastanda = 3;
-        StartCoroutine(spawnSign(1));
     }
 
     public String[] getJawaban(){

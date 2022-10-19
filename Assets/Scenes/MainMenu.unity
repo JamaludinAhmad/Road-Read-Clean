@@ -630,7 +630,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -654,7 +654,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -2.45, y: -1.16, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -691,7 +691,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pengendara
       value: 
-      objectReference: {fileID: 1511980154}
+      objectReference: {fileID: 0}
     - target: {fileID: 8786945134935715101, guid: cca529950857f4e4aaf80f5f186ab7c9,
         type: 3}
       propertyPath: m_RootOrder
@@ -747,7 +747,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8264116638350125204, guid: cca529950857f4e4aaf80f5f186ab7c9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cca529950857f4e4aaf80f5f186ab7c9, type: 3}
 --- !u!4 &670494094 stripped
 Transform:
@@ -1654,7 +1655,6 @@ GameObject:
   - component: {fileID: 1511980157}
   - component: {fileID: 1511980156}
   - component: {fileID: 1511980155}
-  - component: {fileID: 1511980154}
   m_Layer: 0
   m_Name: Pengendara
   m_TagString: Untagged
@@ -1662,27 +1662,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1511980154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511980153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ed3ff6bf4e18174f89abc137e28b1cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDead: 0
-  nyawa: 0
-  jarakTempuh: 0
-  HealthUI:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  jarakUI: {fileID: 0}
-  kecepatan: 0
 --- !u!95 &1511980155
 Animator:
   serializedVersion: 3
@@ -1691,7 +1670,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511980153}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 98aa2e351b5a22e4f90816573d659aab, type: 2}
   m_CullingMode: 0
@@ -1741,7 +1720,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: cb95df92054ab56499e7f833385fddbb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b66fc22b5fd024b4abbc6363d3f255d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1760,7 +1739,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511980153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.05, y: -1.5, z: 0}
+  m_LocalPosition: {x: -4.05, y: -1.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1833,7 +1812,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8264116638350125204, guid: cca529950857f4e4aaf80f5f186ab7c9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cca529950857f4e4aaf80f5f186ab7c9, type: 3}
 --- !u!4 &1611518393 stripped
 Transform:
