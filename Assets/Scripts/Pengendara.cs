@@ -75,6 +75,8 @@ public class Pengendara : MonoBehaviour
         nyawa = 0;
         Time.timeScale = 0;
         //lakukan munculkan UI
+        GameUiManager.gameUiman.DeathUImuncul();
+        
         
     }
 
