@@ -7,8 +7,10 @@ public class MainMenuManager : MonoBehaviour
 {
     public void mulaiGame(){
         SceneManager.LoadScene("Main");
-        print("Game dimulai");
-
         
+    }
+
+    public void quitGAme(){
+        Application.Quit();
     }
 }
