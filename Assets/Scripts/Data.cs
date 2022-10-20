@@ -9,27 +9,37 @@ public class Data : MonoBehaviour
     private void Awake() {
         dt = this;
     }
-     public  float highscoreMeter;
+
+    public  float highscoreMeter;
     public Text highscoreMeterUI;
     public string highscoremeter = "HIGHSCOREMETER" ;
 
     private void Start() {
         highscoreMeter = PlayerPrefs.GetFloat(highscoremeter);
         highscoreMeterUI.text = "Highscore "+ highscoreMeter.ToString();
-
         
     }
 
     private void Update() {
-        if(Pengendara.Instance.GetJarakTempuh() > highscoreMeter){
+        if(Pengendara.Instance.GetJarakTempuh() > highscoreMeter && Pengendara.Instance.IsDead()){
             highscoreMeter = Pengendara.Instance.GetJarakTempuh();
-            highscoreMeterUI.text = "Highscore "+ highscoreMeter.ToString();
+            highscoreMeterUI.text = "New Highscore "+ (int)highscoreMeter;
             
             
             PlayerPrefs.SetFloat(highscoremeter,highscoreMeter);
         }
+        else{
+            highscoreMeterUI.text = "Score "+ (int)Pengendara.Instance.GetJarakTempuh();
+        }
+
+        if(Input.GetKeyDown(KeyCode.A)){
+            PlayerPrefs.SetFloat(highscoremeter, 0);
+            Debug.Log("reseted");
+        }
 
     }
+
+
 
     
 

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,9 +32,6 @@ public class GameManager : MonoBehaviour
             
         }
         //buat sistem level pada spawn
-        //0 - 100 meter 1 spawn dan kecepatan 8
-        //0 - 250 meter 2 spawn dan kecepatan 9
-        //0 - 350 meter 3 spawn dan kecepatan 13
 
         // > 500 meter tanda baru batas tanda jadi 6
 
@@ -62,7 +59,7 @@ public class GameManager : MonoBehaviour
 
         //atur random kecepatan pengendara
         cooldownSpeed += Time.deltaTime;
-        if(Pengendara.Instance.GetJarakTempuh() > 50 && cooldownSpeed > 4){
+        if(Pengendara.Instance.GetJarakTempuh() > 100 && cooldownSpeed > 4){
             int rand = UnityEngine.Random.Range(1, 10);
             if(rand > 4){
                 Pengendara.Instance.kecepatan = 8;
@@ -72,7 +69,7 @@ public class GameManager : MonoBehaviour
         }
         
         //keceptan 9 - 10
-        else if(Pengendara.Instance.GetJarakTempuh() > 250 && cooldownSpeed > 4){
+        else if(Pengendara.Instance.GetJarakTempuh() > 450 && cooldownSpeed > 4){
             int rand = UnityEngine.Random.Range(1, 10);
             if(rand > 8){
                 Pengendara.Instance.kecepatan = 10;
@@ -85,7 +82,7 @@ public class GameManager : MonoBehaviour
         }
 
         //keceptan 11 - 14
-        else if(Pengendara.Instance.GetJarakTempuh() > 500 && cooldownSpeed > 4){
+        else if(Pengendara.Instance.GetJarakTempuh() > 1000 && cooldownSpeed > 4){
             int rand = UnityEngine.Random.Range(1, 10);
             if(rand > 8){
                 Pengendara.Instance.kecepatan = 14;

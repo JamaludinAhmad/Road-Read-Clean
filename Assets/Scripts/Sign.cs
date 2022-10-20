@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
@@ -47,6 +47,8 @@ public class Sign : MoveLeft
     }
 
     public void SignQuiz(){
+        int rand = UnityEngine.Random.Range(1, 100);
+        
         QuizManager.Instance.GenerateQuiz(answer);
     }
 
