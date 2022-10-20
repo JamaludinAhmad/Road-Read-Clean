@@ -78,6 +78,7 @@ public class Pengendara : MonoBehaviour
         GameUiManager.gameUiman.DeathUImuncul();
         
         
+        
     }
 
     public float GetJarakTempuh(){

@@ -34,6 +34,7 @@ public class GameUiManager : MonoBehaviour
         Time.timeScale = 1;
     }
     public void DeathUImuncul(){
+        
         DeathUI.SetActive(true);
         inGameUI.SetActive(false);
         PauseUI.SetActive(false);
