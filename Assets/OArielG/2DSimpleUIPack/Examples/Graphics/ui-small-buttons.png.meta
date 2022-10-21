@@ -298,7 +298,7 @@ TextureImporter:
     second: ui-small-buttons_97
   - first:
       213: -2859934928298323863
-    second: ui-small-buttons_98
+    second: Panduan
   - first:
       213: -6283286399761156809
     second: ui-small-buttons_99
@@ -2637,7 +2637,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui-small-buttons_98
+      name: Panduan
       rect:
         serializedVersion: 2
         x: 128

@@ -30,6 +30,7 @@ public class Sign : MoveLeft
                 }
                 Pengendara.Instance.nyawaBerkurang();
             }
+            Destroy(gameObject);
         }
 
         if(transform.position.x - Camera.main.transform.position.x < -10){

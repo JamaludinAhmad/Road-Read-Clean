@@ -7,15 +7,18 @@ using UnityEngine.UI;
 
 public class GameUiManager : MonoBehaviour
 {
-    GameUiManager(){
-    }
-    public  GameObject PauseUI, inGameUI, DeathUI;
+
+    public  GameObject PauseUI, inGameUI, DeathUI, panduanUI;
     public static GameUiManager gameUiman;
+    
     [SerializeField] Sprite[] imageSign;
     [SerializeField] String[] Jawaban;
 
+
     [SerializeField] private Text teksDesc;
     [SerializeField] private Image image;
+
+    bool clickpanduan;
     
     int count;
 
@@ -24,6 +27,7 @@ public class GameUiManager : MonoBehaviour
             gameUiman = this;
         
         count = 0;
+        clickpanduan = false;
     }
 
 
@@ -78,11 +82,26 @@ public class GameUiManager : MonoBehaviour
         image = image.GetComponent<Image>();
 
         count--;
-        if(count < Jawaban.Length - 1){
+        if(count < 0){
             count = Jawaban.Length;
         }
         image.sprite = imageSign[count];
         teksDesc.text = Jawaban[count];
+    }
+
+    public void clickPanduan(){
+        //jika belum click panduan
+        if(!clickpanduan){
+            panduanUI.SetActive(true);
+            clickpanduan = true;
+            Time.timeScale = 0;
+        }
+
+        else if(clickpanduan){
+            panduanUI.SetActive(false);
+            clickpanduan = false;
+            Time.timeScale = 1;
+        }
     }
   
 
