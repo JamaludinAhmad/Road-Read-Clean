@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameUiManager : MonoBehaviour
 {
@@ -9,9 +11,19 @@ public class GameUiManager : MonoBehaviour
     }
     public  GameObject PauseUI, inGameUI, DeathUI;
     public static GameUiManager gameUiman;
+    [SerializeField] Sprite[] imageSign;
+    [SerializeField] String[] Jawaban;
+
+    [SerializeField] private Text teksDesc;
+    [SerializeField] private Image image;
+    
+    int count;
 
     private void Awake() {
-        gameUiman = this;
+        if(gameUiman == null)
+            gameUiman = this;
+        
+        count = 0;
     }
 
 
@@ -46,6 +58,32 @@ public class GameUiManager : MonoBehaviour
 
     }
 
+    
+    public void DeskripsiSelanjutnya(){
+        imageSign = SignSpawner.Instance.GetSprites();
+        Jawaban = SignSpawner.Instance.getJawaban();
+        image = image.GetComponent<Image>();
+
+        count++;
+        if(count > Jawaban.Length - 1){
+            count = 0;
+        }
+        image.sprite = imageSign[count];
+        teksDesc.text = Jawaban[count];
+    }
+
+    public void DeskripsiSebelumnya(){
+        imageSign = SignSpawner.Instance.GetSprites();
+        Jawaban = SignSpawner.Instance.getJawaban();
+        image = image.GetComponent<Image>();
+
+        count--;
+        if(count < Jawaban.Length - 1){
+            count = Jawaban.Length;
+        }
+        image.sprite = imageSign[count];
+        teksDesc.text = Jawaban[count];
+    }
   
 
 }

@@ -28,7 +28,6 @@ public class Sign : MoveLeft
                 if(SignSpawner.Instance.signList.Count >= 1){
                     SignSpawner.Instance.signList.ElementAt(0).SignQuiz();
                 }
-                Debug.Log("tes");
                 Pengendara.Instance.nyawaBerkurang();
             }
         }
@@ -47,7 +46,6 @@ public class Sign : MoveLeft
     }
 
     public void SignQuiz(){
-        int rand = UnityEngine.Random.Range(1, 100);
         
         QuizManager.Instance.GenerateQuiz(answer);
     }

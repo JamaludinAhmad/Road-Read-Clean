@@ -88,7 +88,7 @@ TextureImporter:
     second: ui-small-buttons_27
   - first:
       213: -6290070328808169283
-    second: ui-small-buttons_28
+    second: Kiri
   - first:
       213: -98614500411816042
     second: ui-small-buttons_29
@@ -118,7 +118,7 @@ TextureImporter:
     second: ui-small-buttons_37
   - first:
       213: -7720509470267307261
-    second: ui-small-buttons_38
+    second: Kanan
   - first:
       213: -3974526501020563420
     second: ui-small-buttons_39
@@ -1167,7 +1167,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui-small-buttons_28
+      name: Kiri
       rect:
         serializedVersion: 2
         x: 128
@@ -1377,7 +1377,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui-small-buttons_38
+      name: Kanan
       rect:
         serializedVersion: 2
         x: 128

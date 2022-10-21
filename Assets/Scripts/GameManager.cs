@@ -104,4 +104,5 @@ public class GameManager : MonoBehaviour
     public void buttonReset(){
         Pengendara.Instance.kecepatan = 6;
     }
+
 }

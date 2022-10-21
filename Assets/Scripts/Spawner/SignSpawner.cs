@@ -32,6 +32,10 @@ public class SignSpawner : MonoBehaviour
         return Jawaban;
     }
 
+    public Sprite[] GetSprites(){
+        return sprites;
+    }
+
     public void SpawnSign(int jumlah){
         StartCoroutine(spawnSign(jumlah));
     }
