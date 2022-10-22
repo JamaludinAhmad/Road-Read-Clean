@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.PlayerLoop;
 using System;
 using UnityEngine.Events;
+using UnityEditor.Media;
 
 public class Pengendara : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class Pengendara : MonoBehaviour
     private float startpos;
 
     public int kecepatan;
+    public GameObject cepatUI;
 
     public UnityAction onPengendaraDead = delegate{ };
 
@@ -42,6 +44,12 @@ public class Pengendara : MonoBehaviour
     private void FixedUpdate() {
         if(!isDead){
             Ngegas();
+            if(kecepatan > 7){
+                cepatUI.SetActive(true);
+            }
+            else{
+                cepatUI.SetActive(false);
+            }
         }
 
         if(Camera.main.transform.position.x - transform.position.x <= -9f){
