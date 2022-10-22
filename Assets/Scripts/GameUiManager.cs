@@ -83,7 +83,7 @@ public class GameUiManager : MonoBehaviour
 
         count--;
         if(count < 0){
-            count = Jawaban.Length;
+            count = Jawaban.Length - 1;
         }
         image.sprite = imageSign[count];
         teksDesc.text = Jawaban[count];

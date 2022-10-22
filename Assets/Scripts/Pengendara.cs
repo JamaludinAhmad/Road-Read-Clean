@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.PlayerLoop;
 using System;
-
+using UnityEngine.Events;
 
 public class Pengendara : MonoBehaviour
 {
@@ -28,6 +28,8 @@ public class Pengendara : MonoBehaviour
     private float startpos;
 
     public int kecepatan;
+
+    public UnityAction onPengendaraDead = delegate{ };
 
     private void Start() {
         nyawa = 3;
@@ -76,6 +78,7 @@ public class Pengendara : MonoBehaviour
         Time.timeScale = 0;
         //lakukan munculkan UI
         GameUiManager.gameUiman.DeathUImuncul();
+        onPengendaraDead();
         
         
         

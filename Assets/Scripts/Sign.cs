@@ -10,6 +10,7 @@ public class Sign : MoveLeft
     public bool answered;
 
     public GameObject arrow;
+    public GameObject pelanggar;
 
 
     private void Start() {
@@ -47,7 +48,11 @@ public class Sign : MoveLeft
     }
 
     public void SignQuiz(){
-        
+        int rand = UnityEngine.Random.Range(0, 10);
+
+        if(rand >= 5 && (answer == 1 || answer == 2) && GameManager.Instance.adapelanggar){
+            pelanggar.SetActive(true);
+        }
         QuizManager.Instance.GenerateQuiz(answer);
     }
 

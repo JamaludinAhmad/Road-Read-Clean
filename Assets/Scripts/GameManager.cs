@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public bool adapelanggar;
     bool isStarted;
     [SerializeField] float cooldown, cooldownSpeed;
     
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
         cooldownSpeed = 0;
         cooldown = 0;
         isStarted = false;
+        adapelanggar = false;
     }
 
 
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
         if(Pengendara.Instance.GetJarakTempuh() > 350 && cooldown > 3f){
             int rand = UnityEngine.Random.Range(1, 4);
             SignSpawner.Instance.SpawnSign(rand);
+            adapelanggar = true;
             cooldown = 0;
         }
 
